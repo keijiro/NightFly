@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54276434dda9c694e85abaf98cdd981d, type: 3}
+  m_Name: Red
+  m_EditorClassIdentifier: 
+  _redCoeffs: {x: 0.779, y: 0.169, z: 0.89, w: 0.35}
+  _greenCoeffs: {x: 0.552, y: 0.357, z: 0.84, w: 0.229}
+  _blueCoeffs: {x: 0.6, y: 0.374, z: 0.6, w: 0.455}

@@ -180,7 +180,6 @@ GameObject:
   m_Component:
   - component: {fileID: 627572180}
   - component: {fileID: 627572179}
-  - component: {fileID: 627572178}
   - component: {fileID: 627572177}
   m_Layer: 20
   m_Name: Boid Camera
@@ -189,20 +188,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &627572177
-AudioListener:
+--- !u!114 &627572177
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 627572176}
   m_Enabled: 1
---- !u!124 &627572178
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 627572176}
-  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d16d77d26fa4043bea8ca975e63781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetCamera: {fileID: 1576077838}
 --- !u!20 &627572179
 Camera:
   m_ObjectHideFlags: 0
@@ -220,7 +217,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
+  far clip plane: 200
   field of view: 78
   orthographic: 0
   orthographic size: 5
@@ -232,8 +229,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -291,11 +288,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _template: {fileID: 11400000, guid: 0900a5d741c5c9841a612681db77c73b, type: 2}
   _throttle: 0
-  _extent: {x: 200, y: 30, z: 200}
+  _extent: {x: 200, y: 200, z: 200}
   _lineRadius: 0.2
-  _lineWidth: 10
+  _lineWidth: 20
   _lineWidthRandomness: 0.5
-  _speed: 180
+  _speed: 280
   _speedRandomness: 0.5
   _randomSeed: 0
   _defaultMaterial: {fileID: 2100000, guid: a172ea80982dad64a9f7ab0ce7670de0, type: 2}
@@ -424,6 +421,7 @@ GameObject:
   - component: {fileID: 1576077840}
   - component: {fileID: 1576077837}
   - component: {fileID: 1576077841}
+  - component: {fileID: 1576077842}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -445,8 +443,9 @@ MonoBehaviour:
   _gradients:
   - {fileID: 11400000, guid: e6532c6d558033b48a7fec62a14b3e4f, type: 2}
   - {fileID: 11400000, guid: d42a6cdf528b8d847953e5642c3e3e35, type: 2}
+  - {fileID: 11400000, guid: 2c271bf8f0dba434f9ba9698c726436f, type: 2}
   _gradientSelect: 0
-  _gradientFrequency: 0.3
+  _gradientFrequency: 0.8
   _gradientSpeed: 0.5
   _opacity: 0
   _shader: {fileID: 4800000, guid: 4a17056471009864db6dfeb7c1e53215, type: 3}
@@ -458,7 +457,7 @@ Camera:
   m_GameObject: {fileID: 1576077836}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 3
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -467,7 +466,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
+  far clip plane: 200
   field of view: 78
   orthographic: 0
   orthographic size: 5
@@ -479,8 +478,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -532,6 +531,26 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1576077842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1576077836}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66fbd5ffe9b9d64da304996f1919f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _setResolution: 1
+  _width: 1920
+  _height: 1080
+  _frameRate: 60
+  _allowSlowDown: 1
+  _preset: 1
+  _startTime: 0
+  _recordLength: 290
+  _shader: {fileID: 4800000, guid: a4bd3b00ad1ed53458ec6ff07694985e, type: 3}
 --- !u!1 &1598134146
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +705,7 @@ MonoBehaviour:
   boidPrefab: {fileID: 1894748254607140, guid: 484acc07517162044860790048b9a380, type: 2}
   spawnCount: 14
   spawnRadius: 4
-  velocity: 28
+  velocity: 30
   velocityVariation: 0.6
   rotationCoeff: 3
   neighborDist: 3

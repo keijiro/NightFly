@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54276434dda9c694e85abaf98cdd981d, type: 3}
-  m_Name: Dark
+  m_Name: Blue
   m_EditorClassIdentifier: 
-  _redCoeffs: {x: 0.362, y: 0.281, z: 0.62, w: 0.27}
-  _greenCoeffs: {x: 0.345, y: 0.336, z: 0.49, w: 0.384}
-  _blueCoeffs: {x: 0.414, y: 0.275, z: 0.39, w: 0.524}
+  _redCoeffs: {x: 0.466, y: 0.49, z: 0.78, w: 0.27}
+  _greenCoeffs: {x: 0.536, y: 0.449, z: 0.63, w: 0.349}
+  _blueCoeffs: {x: 0.698, y: 0.374, z: 0.46, w: 0.478}
